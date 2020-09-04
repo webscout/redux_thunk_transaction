@@ -1,6 +1,9 @@
 
 # Redux thunk transaction
 
+![npm](https://img.shields.io/npm/v/redux-thunk-transaction)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/redux-thunk-transaction)
+
 This library creates a copy of the state inside a [thunk](https://github.com/reduxjs/redux-thunk).
 After thunk finished loading, it applies all changes to the main state. 
 If some problems happened during the loading (thunk promise catch an error), no changes got applied in the main state.
