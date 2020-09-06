@@ -34,9 +34,11 @@ import createThunkTransaction from 'react-thunk-transaction';
 
 const thunk = createThunkTransaction(
     async (dispatch, getState) => {
-      await fetchCategories();
-      await fetchProducts();
-      await fetchBanners();
+      await dispatch(fetchCategories());
+      await Promise.all([ // these thunks will have access to the the state with fetched categories 
+        dispatch(fetchProducts());
+        dispatch(fetchBanners());
+     ]);
     },
     createStore
 );
